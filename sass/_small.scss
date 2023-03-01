@@ -1,0 +1,99 @@
+@media (min-width: 375px) {
+	//Class and Animation to Manipulation in js
+
+	////////////////////////////////////////
+	///
+	.hero-bg {
+		// Greeting Section
+		.greeting {
+			bottom: 6em;
+			font-size: 2rem;
+			&__clock {
+				font-size: 10rem;
+			}
+
+			.show-more {
+				font-size: 1.4rem;
+				width: 12rem;
+				height: 4rem;
+				button {
+					width: 3.5rem;
+					height: 3.5rem;
+				}
+			}
+		}
+		// Popup Section
+		.popup-container {
+			&__content-box {
+				.category-name {
+					font-size: 1.6rem;
+					.info-name {
+						font-size: 1rem;
+					}
+				}
+			}
+		}
+	}
+}
+@media (min-width: 768px) {
+	.hide-info {
+		bottom: -45rem;
+	}
+	.hero-bg {
+		// Greeting Section
+		&__shadow {
+			padding: 5em;
+			.quote-container {
+				width: 500px;
+
+				&__text-box {
+					.fa-rotate {
+						font-size: 2.5rem;
+					}
+
+					.text {
+						font-size: 2rem;
+					}
+				}
+				&__author {
+					font-size: 2rem;
+				}
+			}
+		}
+		.greeting {
+			bottom: 6em;
+			font-size: 2.5rem;
+			&__clock {
+				font-size: 18rem;
+			}
+
+			.show-more {
+				font-size: 1.8rem;
+				width: 15rem;
+				height: 6rem;
+				button {
+					width: 5rem;
+					height: 5rem;
+				}
+			}
+		}
+		// Popup Section
+		.popup-container {
+			&__content-box {
+				width: 100%;
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				grid-template-rows: 1fr 1fr;
+				gap: 5rem;
+				.category-name {
+					display: flex;
+					flex-direction: column;
+					line-height: 3.5rem;
+					font-size: 3rem;
+				}
+			}
+		}
+	}
+}
+
+

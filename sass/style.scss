@@ -1,0 +1,182 @@
+@use 'general' as *;
+
+body {
+	height: 100vh;
+	font-family: 'Inter', sans-serif;
+	background-color: #ebebee;
+}
+
+//Class and Animation to Manipulation in js
+.hide-info {
+	bottom: -700px;
+}
+.show-info {
+	bottom: 0;
+}
+.rotate-arrow {
+	transform: rotate(-180deg);
+}
+.move-greeting {
+	transform: translateY(-225px);
+}
+.hide-quote {
+	opacity: 0;
+}
+@keyframes pulse {
+	0% {
+		border: 1px solid #ebebee;
+		transform: scale(1);
+	}
+	50% {
+		border: 1px solid #ebebee;
+
+		transform: scale(1.03);
+	}
+	100% {
+		border: 1px solid #ebebee;
+		transform: scale(1);
+	}
+}
+
+//////////////////////////////////
+.hero-bg {
+	position: relative;
+	height: 100vh;
+	background-image: url('../img/nighttime-desktop.jpg');
+	background-size: cover;
+	background-position: bottom;
+	overflow: hidden;
+
+	&__shadow {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: #00000088;
+		padding: 2em;
+
+		.quote-container {
+			color: #d2d2d8;
+			width: 100%;
+			height: 120px;
+			// margin: 1em auto;
+			margin-top: 2em;
+			transition: opacity 0.4s ease-out;
+
+			font-size: 16px;
+			&__text-box {
+				display: flex;
+				gap: 1rem;
+				margin-bottom: 1rem;
+				.fa-rotate {
+					cursor: pointer;
+					font-size: 2rem;
+					padding: 5px;
+				}
+				.text {
+					width: 100%;
+				}
+			}
+
+			&__author {
+				color: #fff;
+			}
+		}
+	}
+	.greeting {
+		position: absolute;
+		bottom: 3.5em;
+		color: #fff;
+		font-size: 1.8rem;
+		margin-top: 5em;
+		transition: transform 0.7s ease-out;
+
+		&__title {
+			display: flex;
+			gap: 0.5em;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+			color: #d2d2d8;
+		}
+
+		&__clock {
+			font-size: 8rem;
+			font-weight: 900;
+		}
+		.show-more {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 10rem;
+			height: 3.5rem;
+			padding: 0 0.2em 0 1.2em;
+			margin-top: 4em;
+			border-radius: 2em;
+			background-color: #ebebee;
+			font-size: 1.2rem;
+			color: #000;
+			letter-spacing: 3px;
+			text-transform: uppercase;
+			cursor: pointer;
+			animation: pulse 1.5s ease-in-out infinite;
+
+			button {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 3rem;
+				height: 3rem;
+				border: none;
+				border-radius: 50%;
+				background-color: #000;
+				cursor: pointer;
+				animation: pulse 1.5s ease-in-out infinite;
+			}
+			i {
+				transition: transform 0.5s;
+			}
+			.fa-chevron-up {
+				color: #fff;
+			}
+		}
+	}
+	.popup-container {
+		position: fixed;
+		width: 100%;
+		height: 40vh;
+		background-color: rgb(0, 0, 0);
+		color: #fff;
+		display: flex;
+		align-items: center;
+		padding: 0 2.5em 0 2.5em;
+		transition: bottom 0.7s ease-out;
+
+		&__content-box {
+			width: 100%;
+			.category-name {
+				width: 100%;
+				display: flex;
+				justify-content: space-between;
+				font-size: 1.2rem;
+				text-transform: uppercase;
+				letter-spacing: 2px;
+				line-height: 3.5rem;
+
+				.info-name {
+					font-size: 0.8rem;
+				}
+				.result {
+					font-weight: bold;
+				}
+			}
+		}
+	}
+}
+
+@media (min-height: 500px) {
+	.move-greeting {
+		transform: translateY(-300px);
+	}
+}
+
+@import 'small';
+@import 'large';

@@ -1,0 +1,180 @@
+// Greeting move Up and Show info
+const greetingBox = document.querySelector('.greeting')
+const showMoreBtn = document.querySelector('.show-more')
+const arrowShowMoreBtn = document.querySelector('.show-more i')
+const textShowMoreBtn = document.querySelector('.show-more__text')
+const hiddenInfo = document.querySelector('.popup-container')
+const body = document.querySelector('body')
+// Quote API and elements
+const URL_QUOTE = 'https://api.quotable.io'
+const LENGTH_QUOTE = '/random?maxLength=150'
+const quote = document.querySelector('#quote-text')
+const authorQuoute = document.querySelector('#author-quote')
+const refreshButton = document.querySelector('.fa-rotate')
+const containerQuote = document.querySelector('.quote-container')
+// Geolocation API and elements
+const URL_GEOLOCATION = 'https://ipgeolocation.abstractapi.com/v1/'
+const API_KEY_GEOLOCATION = '?api_key=5b3146592de049a8b8b3db29bb414a7f'
+const country = document.querySelector('#country')
+const timezone = document.querySelector('#timezone')
+// WorldTime API
+const URL_WORLD_TIME = 'https://worldtimeapi.org/api/ip'
+const clock = document.querySelector('.greeting__clock')
+const currentYear = document.querySelector('#yearDay')
+const currentDayOfWeek = document.querySelector('#weekDay')
+const currentWeekNumber = document.querySelector('#weekNumber')
+// Data for Media Hero-bg
+const heroImg = document.querySelector('.hero-bg')
+// other stuffs
+const greetingIcon = document.querySelector('#greeting-icon')
+const greetingText = document.querySelector('#greeting-text')
+const restOfSentence = document.querySelector('#rest-of-sentence')
+const hours = document.querySelector('#hours')
+const minutes = document.querySelector('#minutes')
+
+///////////////////////////			WORLD TIME API
+async function showCurrentDays() {
+	const res = await fetch(URL_WORLD_TIME)
+	const data = await res.json()
+	// data from server
+	const weekDay = data.day_of_week
+	const year = data.day_of_year
+	const weekNumber = data.week_number
+	currentYear.innerHTML = year
+	currentDayOfWeek.innerHTML = weekDay
+	currentWeekNumber.innerHTML = weekNumber
+}
+showCurrentDays()
+///////////////////////////	 		GEOLOCATION API
+async function geolocation() {
+	try {
+		const response = await fetch(URL_GEOLOCATION + API_KEY_GEOLOCATION)
+		const data = await response.json()
+		// Data from server
+		const myTimezone = data.timezone.name
+		const myCity = data.city
+		const countryCode = data.country_code
+
+		country.innerHTML = `In ${myCity}, ${countryCode}`
+		timezone.innerHTML = myTimezone
+	} catch {
+		console.error('lack of data / too much requests')
+	}
+}
+geolocation()
+///////////////////////////	 		QUOTES API
+async function generateQuotes() {
+	try {
+		const response = await fetch(URL_QUOTE + LENGTH_QUOTE)
+		const data = await response.json()
+		quote.textContent = data.content
+		authorQuoute.textContent = '~' + data.author
+	} catch {
+		console.error('lack of data / too much requests')
+	}
+}
+generateQuotes()
+///////////////////////////	 ADD RELEVANT ICON SUN/MOON
+const addIcon = () => {
+	if (hours.innerHTML < 05 || hours.innerHTML >= 18) {
+		greetingIcon.innerHTML = `<i class="fa-solid fa-moon"></i>`
+	} else {
+		greetingIcon.innerHTML = `<img src="img/sun.svg">`
+	}
+}
+///////////////////////////	ADD RELEVANT GREETING
+const generateGreetingText = () => {
+	if (hours.innerHTML >= 05 && hours.innerHTML < 12) {
+		greetingText.textContent = 'Good morning,'
+	} else if (hours.innerHTML >= 12 && hours.innerHTML < 18) {
+		greetingText.textContent = 'Good afternoon,'
+	} else {
+		greetingText.textContent = 'Good evening,'
+	}
+}
+generateGreetingText()
+addIcon()
+/////////////////////////			CLOCK
+function showCurrentTime() {
+	const date = new Date()
+	hours.innerHTML = date.getHours()
+	minutes.innerHTML = date.getMinutes()
+	if (hours.innerHTML < 10) {
+		hours.innerHTML = `0${date.getHours()}`
+	} else {
+		hours.innerHTML = date.getHours()
+	}
+	if (minutes.innerHTML < 10) {
+		minutes.innerHTML = `0${date.getMinutes()}`
+	} else {
+		minutes.innerHTML = date.getMinutes()
+	}
+	generateGreetingText()
+	addIcon()
+}
+showCurrentTime()
+setInterval(showCurrentTime, 1000)
+///////////////////////////	  ANIMATION SHIFT OF GREETINNG AND SHOW INFORMATION
+const showMoreInformation = () => {
+	containerQuote.classList.toggle('hide-quote')
+	greetingBox.classList.toggle('move-greeting')
+	arrowShowMoreBtn.classList.toggle('rotate-arrow')
+	hiddenInfo.classList.toggle('hide-info')
+	hiddenInfo.classList.toggle('show-info')
+
+	if (textShowMoreBtn.textContent == 'More') {
+		textShowMoreBtn.textContent = 'Less'
+		body.style.overflow = 'hidden'
+	} else {
+		body.style.overflow = 'scroll'
+		textShowMoreBtn.textContent = 'More'
+	}
+}
+///////////////////////////	 CHECK CURRENT MEDIA + DAYTIME AND ADD RELEVANT IMG
+function checkResolution() {
+	const smallImg = window.matchMedia('(max-width: 576px')
+	const mediumHeroImg = window.matchMedia('(min-width: 577px) and (max-width: 992px')
+	const bigHeroImg = window.matchMedia('(min-width:993px)')
+
+	const mediaArr = [smallImg, mediumHeroImg, bigHeroImg]
+
+	for (let i = 0; i < mediaArr.length; i++) {
+		mediaArr[i] // single media
+	}
+	const getCurrentMedia = () => {
+		if (mediaArr[0].matches) {
+			// SECOND IF
+			if (hours.innerHTML < 05 || hours.innerHTML >= 18) {
+				heroImg.style.backgroundImage = "url('../img/nighttime-mobile.jpg')"
+				restOfSentence.innerHTML = ''
+			} else {
+				heroImg.style.backgroundImage = "url('../img/daytime-mobile.jpg')"
+				restOfSentence.innerHTML = ''
+			}
+		} else if (mediaArr[1].matches) {
+			// SECOND IF
+			if (hours.innerHTML < 05 || hours.innerHTML >= 18) {
+				heroImg.style.backgroundImage = "url('../img/nighttime-tablet.jpg')"
+				restOfSentence.innerHTML = "It's currently"
+			} else {
+				heroImg.style.backgroundImage = "url('../img/daytime-tablet.jpg')"
+				restOfSentence.innerHTML = "It's currently"
+			}
+		} else if (mediaArr[2].matches) {
+			// SECOND IF
+			if (hours.innerHTML < 05 || hours.innerHTML >= 18) {
+				heroImg.style.backgroundImage = "url('../img/nighttime-desktop.jpg')"
+				restOfSentence.innerHTML = "It's currently"
+			} else {
+				heroImg.style.backgroundImage = "url('../img/daytime-desktop.jpg')"
+				restOfSentence.innerHTML = "It's currently"
+			}
+		}
+	}
+	getCurrentMedia()
+}
+checkResolution()
+// ALL LISTENERS
+window.addEventListener('resize', checkResolution)
+showMoreBtn.addEventListener('click', showMoreInformation)
+refreshButton.addEventListener('click', generateQuotes)

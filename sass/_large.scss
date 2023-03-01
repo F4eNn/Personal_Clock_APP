@@ -1,0 +1,20 @@
+@media (min-width: 992px) {
+	.wrapper {
+		width: 1200px;
+		margin: 0 auto;
+
+		.greeting {
+			width: 1200px;
+			display: flex;
+			justify-content: space-between;
+			.show-more {
+				align-self: flex-end;
+			}
+		}
+	}
+	.hero-bg {
+		.popup-container {
+			height: 50vh;
+		}
+	}
+}

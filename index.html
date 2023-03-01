@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clockTime</title>
+    <!-- FontAwesome Icons -->
+    <script src="https://kit.fontawesome.com/55a6f61747.js" crossorigin="anonymous"></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Script js -->
+</head>
+
+<body>
+    <section class="hero-bg ">
+        <div class="hero-bg__shadow ">
+            <div class="wrapper">
+                <div class="quote-container">
+                    <div class="quote-container__text-box">
+                        <p class="text" id="quote-text">Do not overrate what you have received, nor envy others. He who
+                            envies others does not obtain peace of mind.</p>
+                        <p><i class="fa-solid fa-rotate"></i></p>
+                    </div>
+                    <p class="quote-container__author" id="author-quote">~ bruce Lee</p>
+                </div>
+
+                <div class="greeting">
+                    <div>
+                        <p class="greeting__title"><span id="greeting-icon"></span><span id="greeting-text"></span>
+                            <span id="rest-of-sentence"></span>
+                        </p>
+                        <p class="greeting__clock"><span id="hours"></span>:<span id="minutes"></span></p>
+                        <p class="greeting__title" id="country"></p>
+                    </div>
+                    <div class="show-more">
+                        <p class="show-more__text">More</p>
+                        <button><i class="fa-solid fa-chevron-up "></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup-container hide-info">
+            <div class="wrapper">
+                <div class="popup-container__content-box">
+                    <div class="category-name">
+                        <p class="info-name">Current Timezone</p>
+                        <p class="result" id="timezone"></p>
+                    </div>
+                    <div class="category-name">
+                        <p class="info-name">Day of the year</p>
+                        <p class="result" id="yearDay"></p>
+                    </div>
+                    <div class="category-name">
+                        <p class="info-name">day of the week</p>
+                        <p class="result" id="weekDay"></p>
+                    </div>
+                    <div class="category-name">
+                        <p class="info-name">week number</p>
+                        <p class="result" id="weekNumber"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <script src="script.js" defer></script>
+
+</body>
+
+</html>
+
+
+<!-- <i class="fa-solid fa-chevron-down"></i> -->
