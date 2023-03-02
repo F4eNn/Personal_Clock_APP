@@ -181,7 +181,7 @@ checkResolution()
 const popup = document.querySelector('.popup')
 const popupBtn = document.querySelector('.popup-button')
 
-popupBtn.addEventListener('click', function () {
+const animateGetStarted = () => {
 	const tl = gsap.timeline({ defaults: { duration: 2 } })
 	tl.fromTo('.popup__container', { width: 100 + '%' }, { width: 0, opacity: 0 })
 	tl.fromTo('.popup-items', { opacity: 1 }, { opacity: 0, duration: 1.5 }, '<')
@@ -191,9 +191,18 @@ popupBtn.addEventListener('click', function () {
 	setInterval(function () {
 		popup.style.display = 'none'
 	}, 1800)
-})
+	// setInterval(animateWelcome, 2800)
+}
 
+const animateWelcome = () => {
+	const loading = document.querySelector('#loading')
+	gsap.to('#loading', {duration: 10, text: `Hi User`, delay: 4})
+
+	console.log(loading);
+}
+animateWelcome()
 // ALL LISTENERS
 window.addEventListener('resize', checkResolution)
 showMoreBtn.addEventListener('click', showMoreInformation)
 refreshButton.addEventListener('click', generateQuotes)
+popupBtn.addEventListener('click', animateGetStarted)
