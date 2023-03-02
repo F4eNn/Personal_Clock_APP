@@ -3,7 +3,7 @@ const greetingBox = document.querySelector('.greeting')
 const showMoreBtn = document.querySelector('.show-more')
 const arrowShowMoreBtn = document.querySelector('.show-more i')
 const textShowMoreBtn = document.querySelector('.show-more__text')
-const hiddenInfo = document.querySelector('.popup-container')
+const hiddenInfo = document.querySelector('.info-container')
 const body = document.querySelector('body')
 // Quote API and elements
 const URL_QUOTE = 'https://api.quotable.io'
@@ -67,6 +67,7 @@ async function generateQuotes() {
 	try {
 		const response = await fetch(URL_QUOTE + LENGTH_QUOTE)
 		const data = await response.json()
+		// Data from server
 		quote.textContent = data.content
 		authorQuoute.textContent = '~' + data.author
 	} catch {
@@ -78,18 +79,22 @@ generateQuotes()
 const addIcon = () => {
 	if (hours.innerHTML < 05 || hours.innerHTML >= 18) {
 		greetingIcon.innerHTML = `<i class="fa-solid fa-moon"></i>`
+		hiddenInfo.style.backgroundColor = '##1d1d1d'
+		hiddenInfo.style.color = '#ffff'
 	} else {
 		greetingIcon.innerHTML = `<img src="img/sun.svg">`
+		hiddenInfo.style.backgroundColor = '#c6c6c6'
+		hiddenInfo.style.color = '#000'
 	}
 }
 ///////////////////////////	ADD RELEVANT GREETING
 const generateGreetingText = () => {
 	if (hours.innerHTML >= 05 && hours.innerHTML < 12) {
-		greetingText.textContent = 'Good morning,'
+		greetingText.textContent = 'Good morning'
 	} else if (hours.innerHTML >= 12 && hours.innerHTML < 18) {
-		greetingText.textContent = 'Good afternoon,'
+		greetingText.textContent = 'Good afternoon'
 	} else {
-		greetingText.textContent = 'Good evening,'
+		greetingText.textContent = 'Good evening'
 	}
 }
 generateGreetingText()
@@ -119,15 +124,13 @@ const showMoreInformation = () => {
 	containerQuote.classList.toggle('hide-quote')
 	greetingBox.classList.toggle('move-greeting')
 	arrowShowMoreBtn.classList.toggle('rotate-arrow')
-	hiddenInfo.classList.toggle('hide-info')
-	hiddenInfo.classList.toggle('show-info')
 
 	if (textShowMoreBtn.textContent == 'More') {
 		textShowMoreBtn.textContent = 'Less'
-		body.style.overflow = 'hidden'
+		hiddenInfo.style.transform = 'translateY(0)'
 	} else {
-		body.style.overflow = 'scroll'
 		textShowMoreBtn.textContent = 'More'
+		hiddenInfo.style.transform = ''
 	}
 }
 ///////////////////////////	 CHECK CURRENT MEDIA + DAYTIME AND ADD RELEVANT IMG
@@ -174,7 +177,9 @@ function checkResolution() {
 	getCurrentMedia()
 }
 checkResolution()
+
 // ALL LISTENERS
 window.addEventListener('resize', checkResolution)
 showMoreBtn.addEventListener('click', showMoreInformation)
 refreshButton.addEventListener('click', generateQuotes)
+

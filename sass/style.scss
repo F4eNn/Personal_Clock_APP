@@ -1,23 +1,24 @@
 @use 'general' as *;
 
 body {
-	height: 100vh;
+	height: 100%;
+	width: 100%;
 	font-family: 'Inter', sans-serif;
 	background-color: #ebebee;
 }
-
-//Class and Animation to Manipulation in js
-.hide-info {
-	bottom: -700px;
+.wrapper {
+	max-width: 1200px;
+	margin: 0 auto;
 }
+//Class and Animation to Manipulation in js
 .show-info {
-	bottom: 0;
+	transform: translateY(100%);
 }
 .rotate-arrow {
 	transform: rotate(-180deg);
 }
 .move-greeting {
-	transform: translateY(-225px);
+	transform: translateY(calc(-150px - 10vh));
 }
 .hide-quote {
 	opacity: 0;
@@ -37,7 +38,6 @@ body {
 		transform: scale(1);
 	}
 }
-
 //////////////////////////////////
 .hero-bg {
 	position: relative;
@@ -58,19 +58,24 @@ body {
 			color: #d2d2d8;
 			width: 100%;
 			height: 120px;
-			// margin: 1em auto;
 			margin-top: 2em;
 			transition: opacity 0.4s ease-out;
-
-			font-size: 16px;
+			font-size: 1.6rem;
 			&__text-box {
 				display: flex;
 				gap: 1rem;
+				line-height: 1.5em;
+
 				margin-bottom: 1rem;
 				.fa-rotate {
 					cursor: pointer;
 					font-size: 2rem;
 					padding: 5px;
+					color: #c6c6c6;
+					transition: color 0.5s;
+				}
+				.fa-rotate:hover {
+					color: #fff;
 				}
 				.text {
 					width: 100%;
@@ -111,14 +116,15 @@ body {
 			padding: 0 0.2em 0 1.2em;
 			margin-top: 4em;
 			border-radius: 2em;
-			background-color: #ebebee;
+			background-color: #c6c6c6;
 			font-size: 1.2rem;
 			color: #000;
 			letter-spacing: 3px;
 			text-transform: uppercase;
 			cursor: pointer;
+			transition: background-color 0.4s;
 			animation: pulse 1.5s ease-in-out infinite;
-
+			
 			button {
 				display: flex;
 				justify-content: center;
@@ -138,25 +144,33 @@ body {
 				color: #fff;
 			}
 		}
+		.show-more:hover {
+			background-color: #ffff;
+		}
 	}
-	.popup-container {
+	.info-container {
 		position: fixed;
+		bottom: 0;
+		left: 0;
 		width: 100%;
 		height: 40vh;
-		background-color: rgb(0, 0, 0);
-		color: #fff;
+		background-color: #1d1d1d;
+		color: #ffffff;
 		display: flex;
+		justify-content: center;
 		align-items: center;
-		padding: 0 2.5em 0 2.5em;
-		transition: bottom 0.7s ease-out;
+		padding: 0 2em 0 2em;
+		transition: transform 0.7s ease-out;
+		transform: translateY(100%);
 
 		&__content-box {
 			width: 100%;
 			.category-name {
-				width: 100%;
 				display: flex;
 				justify-content: space-between;
-				font-size: 1.2rem;
+				width: 100%;
+				gap: 1em;
+				font-size: 1.3rem;
 				text-transform: uppercase;
 				letter-spacing: 2px;
 				line-height: 3.5rem;
@@ -171,12 +185,5 @@ body {
 		}
 	}
 }
-
-@media (min-height: 500px) {
-	.move-greeting {
-		transform: translateY(-300px);
-	}
-}
-
 @import 'small';
 @import 'large';

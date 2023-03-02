@@ -15,13 +15,17 @@
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
     <!-- Script js -->
+    <script src="script.js" defer></script>
+
 </head>
 
 <body>
+    <!-- MAIN  -->
     <section class="hero-bg ">
         <div class="hero-bg__shadow ">
             <div class="wrapper">
-                <div class="quote-container">
+                <!-- QUOTE SECTION -->
+                <div class="quote-container ">
                     <div class="quote-container__text-box">
                         <p class="text" id="quote-text">Do not overrate what you have received, nor envy others. He who
                             envies others does not obtain peace of mind.</p>
@@ -29,13 +33,13 @@
                     </div>
                     <p class="quote-container__author" id="author-quote">~ bruce Lee</p>
                 </div>
-
-                <div class="greeting">
+                <!-- GREETING SECTION -->
+                <div class="greeting wrapper">
                     <div>
                         <p class="greeting__title"><span id="greeting-icon"></span><span id="greeting-text"></span>
                             <span id="rest-of-sentence"></span>
                         </p>
-                        <p class="greeting__clock"><span id="hours"></span>:<span id="minutes"></span></p>
+                        <p class="greeting__clock"><span id="hours">13</span>:<span id="minutes">47</span></p>
                         <p class="greeting__title" id="country"></p>
                     </div>
                     <div class="show-more">
@@ -45,10 +49,10 @@
                 </div>
             </div>
         </div>
-
-        <div class="popup-container hide-info">
+        <!-- INFO SECTION -->
+        <div class="info-container ">
             <div class="wrapper">
-                <div class="popup-container__content-box">
+                <div class="info-container__content-box">
                     <div class="category-name">
                         <p class="info-name">Current Timezone</p>
                         <p class="result" id="timezone"></p>
@@ -68,9 +72,8 @@
                 </div>
             </div>
         </div>
-
     </section>
-    <script src="script.js" defer></script>
+
 
 </body>
 

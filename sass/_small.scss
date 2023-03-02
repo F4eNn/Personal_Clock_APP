@@ -1,8 +1,4 @@
 @media (min-width: 375px) {
-	//Class and Animation to Manipulation in js
-
-	////////////////////////////////////////
-	///
 	.hero-bg {
 		// Greeting Section
 		.greeting {
@@ -23,10 +19,12 @@
 			}
 		}
 		// Popup Section
-		.popup-container {
+		.info-container {
 			&__content-box {
 				.category-name {
 					font-size: 1.6rem;
+					line-height: 4rem;
+
 					.info-name {
 						font-size: 1rem;
 					}
@@ -35,6 +33,22 @@
 		}
 	}
 }
+///////////////////////  MEDIA 414px
+@media (min-width: 414px) {
+	.hero-bg {
+		&__shadow {
+			.quote-container {
+				font-size: 1.8rem;
+
+				.fa-rotate {
+					font-size: 2.2rem;
+				}
+			}
+		}
+	}
+}
+///////////////////////  MEDIA 768px
+
 @media (min-width: 768px) {
 	.hide-info {
 		bottom: -45rem;
@@ -44,19 +58,20 @@
 		&__shadow {
 			padding: 5em;
 			.quote-container {
-				width: 500px;
+				width: 600px;
 
 				&__text-box {
 					.fa-rotate {
-						font-size: 2.5rem;
+						font-size: 3.5rem;
 					}
 
 					.text {
-						font-size: 2rem;
+						line-height: 3.5rem;
+						font-size: 2.2rem;
 					}
 				}
 				&__author {
-					font-size: 2rem;
+					font-size: 2.7rem;
 				}
 			}
 		}
@@ -78,22 +93,34 @@
 			}
 		}
 		// Popup Section
-		.popup-container {
+		.info-container {
 			&__content-box {
 				width: 100%;
 				display: grid;
 				grid-template-columns: 1fr 1fr;
 				grid-template-rows: 1fr 1fr;
-				gap: 5rem;
+				gap: 7rem;
+				text-align: left;
 				.category-name {
+					padding-left: 1em;
+					margin-left: auto;
 					display: flex;
 					flex-direction: column;
-					line-height: 3.5rem;
-					font-size: 3rem;
+					justify-content: center;
+					line-height: 1rem;
+					font-size: 4rem;
+					.info-name {
+						font-size: 1.4rem;
+					}
 				}
 			}
 		}
 	}
 }
+///////////////////////  MEDIA height 1000px
 
-
+@media (min-height: 1000px) {
+	.move-greeting {
+		transform: translateY(calc(-150px - 22vh));
+	}
+}
