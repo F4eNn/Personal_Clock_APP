@@ -188,6 +188,78 @@ body {
   font-weight: bold;
 }
 
+.popup {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+}
+.popup__container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: calc(20rem + 10%);
+  padding: 2em;
+  border-top: 1px solid #fff;
+  color: #fff;
+}
+.popup__container .popup-items {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 3em;
+  height: 100%;
+  width: 100%;
+}
+.popup__container .popup-items .popup-title {
+  font-size: clamp(3rem, 4vw, 6rem);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.popup__container .popup-items .input-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.3em;
+}
+.popup__container .popup-items .input-box label {
+  font-size: clamp(1.4rem, 1.8vw, 2.5rem);
+  color: #c6c6c6;
+}
+.popup__container .popup-items .input-box input {
+  color: orange;
+  background-color: transparent;
+  padding-left: 1em;
+  height: 3rem;
+  border: none;
+  border-bottom: 2px solid orange;
+  border-top: 2px solid orange;
+}
+.popup__container .popup-items .input-box ::placeholder {
+  color: rgba(255, 166, 0, 0.336);
+}
+.popup__container .popup-items .input-box input:focus {
+  outline: none;
+}
+.popup__container .popup-button {
+  background-color: #c6c6c6;
+  padding: 0.5em 2.5em 0.5em 2.5em;
+  letter-spacing: 2px;
+  border-radius: 15px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.popup__container .popup-button:hover {
+  transform: scale(1.1);
+}
+
 @media (min-width: 375px) {
   .hero-bg .greeting {
     bottom: 6em;

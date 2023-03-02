@@ -79,12 +79,12 @@ generateQuotes()
 const addIcon = () => {
 	if (hours.innerHTML < 05 || hours.innerHTML >= 18) {
 		greetingIcon.innerHTML = `<i class="fa-solid fa-moon"></i>`
-		hiddenInfo.style.backgroundColor = '##1d1d1d'
+		hiddenInfo.style.backgroundColor = '#1d1d1d'
 		hiddenInfo.style.color = '#ffff'
 	} else {
 		greetingIcon.innerHTML = `<img src="img/sun.svg">`
 		hiddenInfo.style.backgroundColor = '#c6c6c6'
-		hiddenInfo.style.color = '#000'
+		hiddenInfo.style.color = '#0000'
 	}
 }
 ///////////////////////////	ADD RELEVANT GREETING
@@ -177,9 +177,23 @@ function checkResolution() {
 	getCurrentMedia()
 }
 checkResolution()
+// ANIMATION FOR POPUPS
+const popup = document.querySelector('.popup')
+const popupBtn = document.querySelector('.popup-button')
+
+popupBtn.addEventListener('click', function () {
+	const tl = gsap.timeline({ defaults: { duration: 2 } })
+	tl.fromTo('.popup__container', { width: 100 + '%' }, { width: 0, opacity: 0 })
+	tl.fromTo('.popup-items', { opacity: 1 }, { opacity: 0, duration: 1.5 }, '<')
+	tl.to('.popup-title', { fontSize: 0, duration: 0.4 }, '<')
+	tl.to('label', { fontSize: 0, duration: 0.4 }, '<')
+	tl.to('input', { height: 0 }, '<')
+	setInterval(function () {
+		popup.style.display = 'none'
+	}, 1800)
+})
 
 // ALL LISTENERS
 window.addEventListener('resize', checkResolution)
 showMoreBtn.addEventListener('click', showMoreInformation)
 refreshButton.addEventListener('click', generateQuotes)
-
