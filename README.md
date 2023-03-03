@@ -1,12 +1,27 @@
 # Personal Clock app
 
+Project Live: [Personal Clock App](https://main--personal-clock-app-d588fa.netlify.app/)
+
 Part of the concept and design comes from [Clock app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/clock-app-LMFaxFwrM)
+
 ![Design preview for the Clock app](img/preview.jpg)
 
+### Resources
 
-## My project Live
+- I relied on three API's  
 
-    -[Personal Clock App](https://main--personal-clock-app-d588fa.netlify.app/)
+     [Quote-Api](https://github.com/lukePeavey/quotable)  
+ 
+     [Geolocatoin-Api](https://www.abstractapi.com/api/ip-geolocation-api)  
+ 
+     [WorldTime-Api](https://worldtimeapi.org/)  
+ 
+- rest of stuff  
+
+    [Icons](https://fontawesome.com/)  
+
+    [JavaScript animations](https://greensock.com/)  
+    
     
 ### The challenge
 
@@ -31,12 +46,3 @@ Users should be able to:
   - The moon icon and the nighttime background image between 6pm and 5am
 - Generate a new random programming quote whenever the refresh icon is clicked
 
-### Resources
-
-- I relied on three API's
- -[Quote-Api](https://github.com/lukePeavey/quotable)
- -[Geolocatoin-Api](https://www.abstractapi.com/api/ip-geolocation-api)
- -[WorldTime-Api](https://worldtimeapi.org/)
-- rest of stuff
-[Icons](https://fontawesome.com/) 
-[JavaScript animations](https://greensock.com/)
