@@ -2,6 +2,9 @@
 	.hero-bg {
 		.info-container {
 			height: 40vh;
+			&__content-box {
+				gap: 8rem 20rem;
+			}
 		}
 		.greeting {
 			width: 100%;
@@ -12,31 +15,35 @@
 				align-self: self-end;
 			}
 			&__clock {
+				font-size: 20rem;
+			}
+		}
+	}
+}
+@media (min-height: 600px) and (min-width: 1000px) {
+	.move-greeting {
+		transform: translateY(calc(-150px - 4vh));
+	}
+	.hero-bg {
+		.greeting {
+			&__clock {
+				font-size: 13rem;
+			}
+		}
+	}
+}
+@media (min-width: 1200px) {
+	.hero-bg {
+		.info-container {
+			&__content-box {
+				gap: 8rem 30rem;
+			}
+		}
+	}
+	.hero-bg {
+		.greeting {
+			&__clock {
 				font-size: 16rem;
-			}
-		}
-	}
-}
-@media (min-height: 600px) and (min-width: 1000px) {
-	.move-greeting {
-		transform: translateY(calc(-150px - 4vh));
-	}
-	.hero-bg {
-		.greeting {
-			&__clock {
-				font-size: 13rem;
-			}
-		}
-	}
-}
-@media (min-height: 600px) and (min-width: 1000px) {
-	.move-greeting {
-		transform: translateY(calc(-150px - 4vh));
-	}
-	.hero-bg {
-		.greeting {
-			&__clock {
-				font-size: 13rem;
 			}
 		}
 	}
@@ -44,11 +51,11 @@
 
 @media (min-height: 740px) {
 	.move-greeting {
-		transform: translateY(calc(-150px - 22vh));
+		transform: translateY(calc(-150px - 17vh));
 	}
 }
 @media (min-height: 1000px) {
 	.move-greeting {
-		transform: translateY(calc(-150px - 22vh));
+		transform: translateY(calc(-150px - 20vh));
 	}
 }
