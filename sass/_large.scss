@@ -1,4 +1,8 @@
 @media (min-width: 992px) {
+	.hero-bg {
+		.info-container {
+			height: 40vh;
+		}
 		.greeting {
 			width: 100%;
 			display: flex;
@@ -7,10 +11,44 @@
 				margin-right: 8rem;
 				align-self: self-end;
 			}
+			&__clock {
+				font-size: 16rem;
+			}
 		}
+	}
+}
+@media (min-height: 600px) and (min-width: 1000px) {
+	.move-greeting {
+		transform: translateY(calc(-150px - 4vh));
+	}
 	.hero-bg {
-		.info-container {
-			height: 40vh;
+		.greeting {
+			&__clock {
+				font-size: 13rem;
+			}
 		}
+	}
+}
+@media (min-height: 600px) and (min-width: 1000px) {
+	.move-greeting {
+		transform: translateY(calc(-150px - 4vh));
+	}
+	.hero-bg {
+		.greeting {
+			&__clock {
+				font-size: 13rem;
+			}
+		}
+	}
+}
+
+@media (min-height: 740px) {
+	.move-greeting {
+		transform: translateY(calc(-150px - 22vh));
+	}
+}
+@media (min-height: 1000px) {
+	.move-greeting {
+		transform: translateY(calc(-150px - 22vh));
 	}
 }

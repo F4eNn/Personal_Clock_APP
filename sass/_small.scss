@@ -31,7 +31,6 @@
 				}
 			}
 		}
-		
 	}
 }
 ///////////////////////  MEDIA 414px
@@ -80,7 +79,7 @@
 			bottom: calc(4.5em + 5vh);
 			font-size: 2.5rem;
 			&__clock {
-				font-size: 18rem;
+				font-size: 14rem;
 			}
 
 			.show-more {
@@ -120,8 +119,6 @@
 }
 ///////////////////////  MEDIA height 1000px
 
-@media (min-height: 1000px) {
-	.move-greeting {
-		transform: translateY(calc(-150px - 22vh));
-	}
-}
+
+
+			

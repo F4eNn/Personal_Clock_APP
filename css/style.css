@@ -346,7 +346,7 @@ body {
     font-size: 2.5rem;
   }
   .hero-bg .greeting__clock {
-    font-size: 18rem;
+    font-size: 14rem;
   }
   .hero-bg .greeting .show-more {
     font-size: 1.8rem;
@@ -378,22 +378,46 @@ body {
     font-size: 1.4rem;
   }
 }
-@media (min-height: 1000px) {
-  .move-greeting {
-    transform: translateY(calc(-150px - 22vh));
-  }
-}
 @media (min-width: 992px) {
-  .greeting {
+  .hero-bg .info-container {
+    height: 40vh;
+  }
+  .hero-bg .greeting {
     width: 100%;
     display: flex;
     justify-content: space-between;
   }
-  .greeting .show-more {
+  .hero-bg .greeting .show-more {
     margin-right: 8rem;
     align-self: self-end;
   }
-  .hero-bg .info-container {
-    height: 40vh;
+  .hero-bg .greeting__clock {
+    font-size: 16rem;
+  }
+}
+@media (min-height: 600px) and (min-width: 1000px) {
+  .move-greeting {
+    transform: translateY(calc(-150px - 4vh));
+  }
+  .hero-bg .greeting__clock {
+    font-size: 13rem;
+  }
+}
+@media (min-height: 600px) and (min-width: 1000px) {
+  .move-greeting {
+    transform: translateY(calc(-150px - 4vh));
+  }
+  .hero-bg .greeting__clock {
+    font-size: 13rem;
+  }
+}
+@media (min-height: 740px) {
+  .move-greeting {
+    transform: translateY(calc(-150px - 22vh));
+  }
+}
+@media (min-height: 1000px) {
+  .move-greeting {
+    transform: translateY(calc(-150px - 22vh));
   }
 }/*# sourceMappingURL=style.css.map */
