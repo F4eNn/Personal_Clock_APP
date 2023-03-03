@@ -31,6 +31,11 @@ const greetingText = document.querySelector('#greeting-text')
 const restOfSentence = document.querySelector('#rest-of-sentence')
 const hours = document.querySelector('#hours')
 const minutes = document.querySelector('#minutes')
+// ANIMATION FOR POPUPS
+const popup = document.querySelector('.popup')
+const popupBtn = document.querySelector('.popup-button')
+const nameFromInput = document.querySelector('#input-popup')
+
 
 ///////////////////////////			WORLD TIME API
 async function showCurrentDays() {
@@ -84,17 +89,17 @@ const addIcon = () => {
 	} else {
 		greetingIcon.innerHTML = `<img src="img/sun.svg">`
 		hiddenInfo.style.backgroundColor = '#c6c6c6'
-		hiddenInfo.style.color = '#0000'
+		hiddenInfo.style.color = '#000'
 	}
 }
 ///////////////////////////	ADD RELEVANT GREETING
 const generateGreetingText = () => {
 	if (hours.innerHTML >= 05 && hours.innerHTML < 12) {
-		greetingText.textContent = 'Good morning'
+		greetingText.textContent = `Good morning ${nameFromInput.value}!`
 	} else if (hours.innerHTML >= 12 && hours.innerHTML < 18) {
-		greetingText.textContent = 'Good afternoon'
+		greetingText.textContent = `Good afternoon ${nameFromInput.value}!`
 	} else {
-		greetingText.textContent = 'Good evening'
+		greetingText.textContent = `Good evening ${nameFromInput.value}!`
 	}
 }
 generateGreetingText()
@@ -177,11 +182,13 @@ function checkResolution() {
 	getCurrentMedia()
 }
 checkResolution()
-// ANIMATION FOR POPUPS
-const popup = document.querySelector('.popup')
-const popupBtn = document.querySelector('.popup-button')
+
+//ENTRY POPUPS
 
 const animateGetStarted = () => {
+	//input name
+	nameFromInput.defaultValue = 'User'
+
 	const tl = gsap.timeline({ defaults: { duration: 2 } })
 	tl.fromTo('.popup__container', { width: 100 + '%' }, { width: 0, opacity: 0 })
 	tl.fromTo('.popup-items', { opacity: 1 }, { opacity: 0, duration: 1.5 }, '<')
@@ -191,16 +198,16 @@ const animateGetStarted = () => {
 	setInterval(function () {
 		popup.style.display = 'none'
 	}, 1800)
-	// setInterval(animateWelcome, 2800)
+	animateWelcome(nameFromInput)
 }
-
-const animateWelcome = () => {
-	const loading = document.querySelector('#loading')
-	gsap.to('#loading', {duration: 10, text: `Hi User`, delay: 4})
-
-	console.log(loading);
+// SAY HI POPUP
+const animateWelcome = name => {
+	const tl = gsap.timeline({ delay: 2 })
+	tl.to('#loading', { duration: 3, text: `Hello ${name.value}!` })
+	tl.to('#loading', { x: -200 + '%', duration: 2 })
+	tl.to('#loading', { opacity: 0, duration: 0.9 }, '<')
+	gsap.to('.show-name-popup', { width: 0, duration: 2, delay: 5.7 })
 }
-animateWelcome()
 // ALL LISTENERS
 window.addEventListener('resize', checkResolution)
 showMoreBtn.addEventListener('click', showMoreInformation)

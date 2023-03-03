@@ -72,10 +72,11 @@ body {
 					font-size: 2rem;
 					padding: 5px;
 					color: #c6c6c6;
-					transition: color 0.5s;
+					transition: color 0.3s, transform .5s;
 				}
 				.fa-rotate:hover {
 					color: #fff;
+					transform: scale(1.1)
 				}
 				.text {
 					width: 100%;
@@ -201,17 +202,6 @@ body {
 		left: 50%;
 		top: 50%;
 		transform: translate(-50%, -50%);
-		.next-btn,
-		.popup-button {
-			background-color: #c6c6c6;
-			padding: 0.5em 2.5em 0.5em 2.5em;
-			letter-spacing: 2px;
-			border-radius: 15px;
-			text-transform: uppercase;
-			border: none;
-			cursor: pointer;
-			transition: transform 0.3s;
-		}
 	}
 }
 .popup {
@@ -259,6 +249,16 @@ body {
 					outline: none;
 				}
 			}
+			.popup-button {
+				background-color: #c6c6c6;
+				padding: 0.5em 2.5em 0.5em 2.5em;
+				letter-spacing: 2px;
+				border-radius: 15px;
+				text-transform: uppercase;
+				border: none;
+				cursor: pointer;
+				transition: transform 0.3s;
+			}
 		}
 
 		.popup-button:hover {
@@ -267,10 +267,8 @@ body {
 	}
 }
 .show-name-popup {
-	// display: none;
-	z-index: 11;
+	
 	&__container {
-		border: 1px solid #fff;
 		display: flex;
 		justify-content: flex-start;
 		align-items: center;
@@ -284,13 +282,8 @@ body {
 			align-items: center;
 			width: 100%;
 			height: 300px;
-			border: 1px solid orange;
 			color: orange;
 			font-size: clamp(3rem, 4vw, 6rem);
-		}
-		.next-btn {
-			margin-left: 20%;
-			margin-right: 2em;
 		}
 	}
 }

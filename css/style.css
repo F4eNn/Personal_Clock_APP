@@ -84,10 +84,11 @@ body {
   font-size: 2rem;
   padding: 5px;
   color: #c6c6c6;
-  transition: color 0.5s;
+  transition: color 0.3s, transform 0.5s;
 }
 .hero-bg__shadow .quote-container__text-box .fa-rotate:hover {
   color: #fff;
+  transform: scale(1.1);
 }
 .hero-bg__shadow .quote-container__text-box .text {
   width: 100%;
@@ -207,19 +208,6 @@ body {
   top: 50%;
   transform: translate(-50%, -50%);
 }
-.popup__container .next-btn,
-.popup__container .popup-button,
-.show-name-popup__container .next-btn,
-.show-name-popup__container .popup-button {
-  background-color: #c6c6c6;
-  padding: 0.5em 2.5em 0.5em 2.5em;
-  letter-spacing: 2px;
-  border-radius: 15px;
-  text-transform: uppercase;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
 
 .popup {
   z-index: 10;
@@ -267,15 +255,21 @@ body {
 .popup__container .popup-items .input-box input:focus {
   outline: none;
 }
+.popup__container .popup-items .popup-button {
+  background-color: #c6c6c6;
+  padding: 0.5em 2.5em 0.5em 2.5em;
+  letter-spacing: 2px;
+  border-radius: 15px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
 .popup__container .popup-button:hover {
   transform: scale(1.1);
 }
 
-.show-name-popup {
-  z-index: 11;
-}
 .show-name-popup__container {
-  border: 1px solid #fff;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -290,13 +284,8 @@ body {
   align-items: center;
   width: 100%;
   height: 300px;
-  border: 1px solid orange;
   color: orange;
   font-size: clamp(3rem, 4vw, 6rem);
-}
-.show-name-popup__container .next-btn {
-  margin-left: 20%;
-  margin-right: 2em;
 }
 
 @media (min-width: 375px) {
@@ -353,7 +342,7 @@ body {
     font-size: 2.7rem;
   }
   .hero-bg .greeting {
-    bottom: 6em;
+    bottom: calc(4.5em + 5vh);
     font-size: 2.5rem;
   }
   .hero-bg .greeting__clock {
