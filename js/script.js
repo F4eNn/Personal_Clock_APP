@@ -14,6 +14,7 @@ const refreshButton = document.querySelector('.fa-rotate')
 const containerQuote = document.querySelector('.quote-container')
 // Geolocation API and elements
 const URL_GEOLOCATION = 'https://ipgeolocation.abstractapi.com/v1/'
+const API_KEY_GEOLOCATION = '?api_key=5b3146592de049a8b8b3db29bb414a7f'
 const country = document.querySelector('#country')
 const timezone = document.querySelector('#timezone')
 // WorldTime API
@@ -35,7 +36,6 @@ const popup = document.querySelector('.popup')
 const popupBtn = document.querySelector('.popup-button')
 const nameFromInput = document.querySelector('#input-popup')
 
-
 ///////////////////////////			WORLD TIME API
 async function showCurrentDays() {
 	const res = await fetch(URL_WORLD_TIME)
@@ -54,6 +54,7 @@ async function geolocation() {
 	try {
 		const response = await fetch(URL_GEOLOCATION + API_KEY_GEOLOCATION)
 		const data = await response.json()
+
 		// Data from server
 		const myTimezone = data.timezone.name
 		const myCity = data.city
@@ -103,7 +104,7 @@ const generateGreetingText = () => {
 }
 generateGreetingText()
 addIcon()
-/////////////////////////			CLOCK
+///////////////////////			CLOCK
 function showCurrentTime() {
 	const date = new Date()
 	hours.innerHTML = date.getHours()
