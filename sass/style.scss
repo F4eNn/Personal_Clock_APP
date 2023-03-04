@@ -1,7 +1,7 @@
 @use 'general' as *;
 
 body {
-
+	height: 100svh;
 	font-family: 'Inter', sans-serif;
 	background-color: #ebebee;
 }
@@ -38,7 +38,7 @@ body {
 	}
 }
 main {
-	
+	height: 100svh;
 }
 //////////////////////////////////
 .hero-bg {
