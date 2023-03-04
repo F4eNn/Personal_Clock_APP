@@ -20,78 +20,81 @@
 
 <body>
     <!-- MAIN  -->
-    <section class="hero-bg ">
-        <div class="hero-bg__shadow ">
-            <div class="wrapper">
-                <!-- QUOTE SECTION -->
-                <div class="quote-container ">
-                    <div class="quote-container__text-box">
-                        <p class="text" id="quote-text">Do not overrate what you have received, nor envy others. He who
-                            envies others does not obtain peace of mind.</p>
-                        <p><i class="fa-solid fa-rotate"></i></p>
+    <main>
+        <section class="hero-bg ">
+            <div class="hero-bg__shadow ">
+                <div class="wrapper">
+                    <!-- QUOTE SECTION -->
+                    <div class="quote-container ">
+                        <div class="quote-container__text-box">
+                            <p class="text" id="quote-text">Do not overrate what you have received, nor envy others. He
+                                who
+                                envies others does not obtain peace of mind.</p>
+                            <p><i class="fa-solid fa-rotate"></i></p>
+                        </div>
+                        <p class="quote-container__author" id="author-quote">~</p>
                     </div>
-                    <p class="quote-container__author" id="author-quote">~</p>
-                </div>
-                <!-- GREETING SECTION -->
-                <div class="greeting wrapper">
-                    <div>
-                        <p class="greeting__title"><span id="greeting-icon"></span><span id="greeting-text"></span>
-                            <span id="rest-of-sentence"></span>
-                        </p>
-                        <p class="greeting__clock"><span id="hours">13</span>:<span id="minutes">47</span></p>
-                        <p class="greeting__title" id="country"></p>
-                    </div>
-                    <div class="show-more">
-                        <p class="show-more__text">More</p>
-                        <button><i class="fa-solid fa-chevron-up "></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- INFO SECTION -->
-        <div class="info-container ">
-            <div class="wrapper">
-                <div class="info-container__content-box wrapper">
-                    <div class="category-name">
-                        <p class="info-name">Current Timezone</p>
-                        <p class="result" id="timezone"></p>
-                    </div>
-                    <div class="category-name">
-                        <p class="info-name">Day of the year</p>
-                        <p class="result" id="yearDay"></p>
-                    </div>
-                    <div class="category-name">
-                        <p class="info-name">day of the week</p>
-                        <p class="result" id="weekDay"></p>
-                    </div>
-                    <div class="category-name">
-                        <p class="info-name">week number</p>
-                        <p class="result" id="weekNumber"></p>
+                    <!-- GREETING SECTION -->
+                    <div class="greeting wrapper">
+                        <div>
+                            <p class="greeting__title"><span id="greeting-icon"></span><span id="greeting-text"></span>
+                                <span id="rest-of-sentence"></span>
+                            </p>
+                            <p class="greeting__clock"><span id="hours">13</span>:<span id="minutes">47</span></p>
+                            <p class="greeting__title" id="country"></p>
+                        </div>
+                        <div class="show-more">
+                            <p class="show-more__text">More</p>
+                            <button><i class="fa-solid fa-chevron-up "></i></button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- SECTION POPUP -->
-    <section class="popup">
-        <div class="popup__container">
-            <div class="popup-items">
-                <h1 class="popup-title">Get started </h1>
-                <div class="input-box">
-                    <label for="text">How should I call you</label>
-                    <input id="input-popup" type="text" placeholder=" enter your name..." maxlength="12">
+            <!-- INFO SECTION -->
+            <div class="info-container ">
+                <div class="wrapper">
+                    <div class="info-container__content-box wrapper">
+                        <div class="category-name">
+                            <p class="info-name">Current Timezone</p>
+                            <p class="result" id="timezone"></p>
+                        </div>
+                        <div class="category-name">
+                            <p class="info-name">Day of the year</p>
+                            <p class="result" id="yearDay"></p>
+                        </div>
+                        <div class="category-name">
+                            <p class="info-name">day of the week</p>
+                            <p class="result" id="weekDay"></p>
+                        </div>
+                        <div class="category-name">
+                            <p class="info-name">week number</p>
+                            <p class="result" id="weekNumber"></p>
+                        </div>
+                    </div>
                 </div>
-                <button class="popup-button">Done</button>
             </div>
-        </div>
-    </section>
-    <!-- SECTION SHOW_NAME-POPUP -->
-    <section class="show-name-popup">
-        <div class="show-name-popup__container">
-            <div class="hello-box">
-                <p id="loading"></p>
+        </section>
+        <!-- SECTION POPUP -->
+        <section class="popup">
+            <div class="popup__container">
+                <div class="popup-items">
+                    <h1 class="popup-title">Get started </h1>
+                    <div class="input-box">
+                        <label for="text">How should I call you</label>
+                        <input id="input-popup" type="text" placeholder=" enter your name..." maxlength="12">
+                    </div>
+                    <button class="popup-button">Done</button>
+                </div>
             </div>
-    </section>
+        </section>
+        <!-- SECTION SHOW_NAME-POPUP -->
+        <section class="show-name-popup">
+            <div class="show-name-popup__container">
+                <div class="hello-box">
+                    <p id="loading"></p>
+                </div>
+        </section>
+    </main>
     <!-- Animation CDN's -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/TextPlugin.min.js"></script>

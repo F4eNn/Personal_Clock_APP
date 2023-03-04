@@ -38,6 +38,13 @@ body {
 		transform: scale(1);
 	}
 }
+main {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
 //////////////////////////////////
 .hero-bg {
 	position: relative;
@@ -72,11 +79,11 @@ body {
 					font-size: 2rem;
 					padding: 5px;
 					color: #c6c6c6;
-					transition: color 0.3s, transform .5s;
+					transition: color 0.3s, transform 0.5s;
 				}
 				.fa-rotate:hover {
 					color: #fff;
-					transform: scale(1.1)
+					transform: scale(1.1);
 				}
 				.text {
 					width: 100%;
@@ -166,7 +173,7 @@ body {
 
 		&__content-box {
 			width: 100%;
-			
+
 			.category-name {
 				display: flex;
 				justify-content: space-between;
@@ -268,7 +275,6 @@ body {
 	}
 }
 .show-name-popup {
-	
 	&__container {
 		display: flex;
 		justify-content: flex-start;

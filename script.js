@@ -14,7 +14,6 @@ const refreshButton = document.querySelector('.fa-rotate')
 const containerQuote = document.querySelector('.quote-container')
 // Geolocation API and elements
 const URL_GEOLOCATION = 'https://ipgeolocation.abstractapi.com/v1/'
-const API_KEY_GEOLOCATION = '?api_key=5b3146592de049a8b8b3db29bb414a7f'
 const country = document.querySelector('#country')
 const timezone = document.querySelector('#timezone')
 // WorldTime API
